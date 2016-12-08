@@ -75,7 +75,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
         //self.locationManager.stopUpdatingLocation()
     }
     
-    private func locationManager(manager: CLLocationManager, didFailWithError error:NSError)
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error)
     {
         print("Error: " + error.localizedDescription)
     }
