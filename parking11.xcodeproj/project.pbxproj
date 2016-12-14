@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1B31FB1F1E01FBC9009E8EE1 /* MyParkingSectionPhoto.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B31FB1E1E01FBC9009E8EE1 /* MyParkingSectionPhoto.png */; };
 		1B78EA361DF8F57C00A94333 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B78EA351DF8F57C00A94333 /* AppDelegate.swift */; };
 		1B78EA381DF8F57C00A94333 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B78EA371DF8F57C00A94333 /* ViewController.swift */; };
 		1B78EA3B1DF8F57C00A94333 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B78EA391DF8F57C00A94333 /* Main.storyboard */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1B31FB1E1E01FBC9009E8EE1 /* MyParkingSectionPhoto.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MyParkingSectionPhoto.png; sourceTree = "<group>"; };
 		1B78EA321DF8F57C00A94333 /* parking11.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = parking11.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1B78EA351DF8F57C00A94333 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1B78EA371DF8F57C00A94333 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -68,6 +70,7 @@
 				1B78EA351DF8F57C00A94333 /* AppDelegate.swift */,
 				1B78EA371DF8F57C00A94333 /* ViewController.swift */,
 				1B78EA391DF8F57C00A94333 /* Main.storyboard */,
+				1B31FB1E1E01FBC9009E8EE1 /* MyParkingSectionPhoto.png */,
 				1B78EA4E1DF9C4F300A94333 /* CameraViewController.swift */,
 				1B78EA3C1DF8F57C00A94333 /* Assets.xcassets */,
 				1B78EA4C1DF8F74200A94333 /* ReadMe.rtf */,
@@ -146,6 +149,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1B31FB1F1E01FBC9009E8EE1 /* MyParkingSectionPhoto.png in Resources */,
 				1B78EA401DF8F57C00A94333 /* LaunchScreen.storyboard in Resources */,
 				1B78EA3D1DF8F57C00A94333 /* Assets.xcassets in Resources */,
 				1B78EA4D1DF8F74200A94333 /* ReadMe.rtf in Resources */,
@@ -324,6 +328,7 @@
 				1B78EA461DF8F57C00A94333 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

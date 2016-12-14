@@ -13,6 +13,9 @@ import CoreLocation
 class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
     
     var count = 0
+    var dropPin=false
+     let annotation = MKPointAnnotation()
+
     
     @IBOutlet var mapView: MKMapView!
     
@@ -29,7 +32,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
         loc.pausesLocationUpdatesAutomatically = true
         loc.activityType = CLActivityType.fitness
         loc.allowsBackgroundLocationUpdates = false
-        print("set locaton manager")
+        print("set location manager")
         
         return loc
     }()
@@ -44,7 +47,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
         //Map
         mapView.showsUserLocation = true
         mapView.mapType = MKMapType.hybrid
-        mapView.userTrackingMode = .follow
+        //mapView.userTrackingMode = .follow
         mapView.showsTraffic = true
         mapView.delegate = self
         self.locationManager.startUpdatingLocation()
@@ -73,6 +76,17 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
         self.mapView.setRegion(region, animated: true)
         
         //self.locationManager.stopUpdatingLocation()
+        
+        //add annotation
+        if dropPin==true{
+            annotation.title = "My Parking Location"
+            annotation.coordinate = center
+            mapView.addAnnotation(annotation)
+            dropPin=false
+            
+        }
+       
+
     }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error)
@@ -85,12 +99,25 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
         
         if status == CLAuthorizationStatus.authorizedAlways {
             mapView.showsUserLocation = true
-            mapView.userTrackingMode = MKUserTrackingMode.follow
+            //mapView.userTrackingMode = MKUserTrackingMode.follow
         } else {
             print("Permission Refused")
         }
     }
+    
+    
+    
+    @IBAction func Pin(_ sender: Any) {
+        dropPin=true
+         print("drop pin")
+        
+    }
 
+    @IBAction func Stop(_ sender: Any) {
+        dropPin=false
+        mapView.removeAnnotations([annotation])
+        print("remove pin")
+    }
 
 }
 

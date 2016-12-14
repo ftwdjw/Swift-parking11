@@ -7,6 +7,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -25,29 +26,52 @@
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Tf8-um-1nF">
                                 <rect key="frame" x="0.0" y="-7" width="375" height="674"/>
                             </mapView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="MyParkingSectionPhoto.png" translatesAutoresizingMaskIntoConstraints="NO" id="WZU-A6-5AD">
+                                <rect key="frame" x="0.0" y="64" width="76" height="102"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="76" id="yYV-oF-UlG"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="WZU-A6-5AD" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="GXT-FB-tzl"/>
                             <constraint firstAttribute="bottomMargin" secondItem="Tf8-um-1nF" secondAttribute="bottom" constant="-99" id="KHU-0C-Sd4"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="WZU-A6-5AD" secondAttribute="bottom" constant="358" id="UCt-Gj-25E"/>
                             <constraint firstItem="Tf8-um-1nF" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="-7" id="VGh-Iz-4MU"/>
+                            <constraint firstItem="WZU-A6-5AD" firstAttribute="leading" secondItem="Tf8-um-1nF" secondAttribute="leading" id="dQa-u7-6XA"/>
                             <constraint firstItem="Tf8-um-1nF" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="g0Y-U0-5B1"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Tf8-um-1nF" secondAttribute="trailing" constant="-71" id="gh4-2V-ggT"/>
                         </constraints>
                     </view>
+                    <toolbarItems/>
                     <navigationItem key="navigationItem" id="cqi-lv-oP2">
-                        <barButtonItem key="rightBarButtonItem" systemItem="camera" id="vNc-Ve-Yeg">
+                        <leftBarButtonItems>
+                            <barButtonItem systemItem="add" id="per-xf-OmV">
+                                <connections>
+                                    <action selector="Pin:" destination="BYZ-38-t0r" id="WW3-Px-sz1"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem systemItem="camera" id="vNc-Ve-Yeg">
+                                <connections>
+                                    <segue destination="PV1-ye-qAq" kind="show" identifier="goToCamera" id="dq0-8k-2NX"/>
+                                </connections>
+                            </barButtonItem>
+                        </leftBarButtonItems>
+                        <barButtonItem key="rightBarButtonItem" systemItem="stop" id="oBh-1L-p6p">
                             <connections>
-                                <segue destination="PV1-ye-qAq" kind="show" identifier="goToCamera" id="dq0-8k-2NX"/>
+                                <action selector="Stop:" destination="BYZ-38-t0r" id="7oe-QU-0qD"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="mapView" destination="Tf8-um-1nF" id="69H-3k-qps"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1056.8" y="123.68815592203899"/>
+            <point key="canvasLocation" x="1055.625" y="123.59154929577466"/>
         </scene>
         <!--Camera View Controller-->
         <scene sceneID="6Ut-qU-JRx">
@@ -126,4 +150,7 @@
             <point key="canvasLocation" x="117.59999999999999" y="123.68815592203899"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="MyParkingSectionPhoto.png" width="512" height="800"/>
+    </resources>
 </document>
