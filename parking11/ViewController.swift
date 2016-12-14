@@ -10,12 +10,17 @@ import UIKit
 import MapKit
 import CoreLocation
 
-class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
+class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate,UIImagePickerControllerDelegate,
+UINavigationControllerDelegate {
+    
+     let picker = UIImagePickerController()
     
     var count = 0
     var dropPin=false
      let annotation = MKPointAnnotation()
 
+    
+    @IBOutlet var imageView: UIImageView!
     
     @IBOutlet var mapView: MKMapView!
     
@@ -52,8 +57,18 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
         mapView.delegate = self
         self.locationManager.startUpdatingLocation()
         print("start location manager")
+        
+        picker.delegate = self
+        picker.allowsEditing = false
+        picker.sourceType = .photoLibrary
+        picker.mediaTypes = UIImagePickerController.availableMediaTypes(for: .photoLibrary)!
+        picker.modalPresentationStyle = .popover
+        present(picker, animated: true, completion: nil)
+        //picker.popoverPresentationController?.barButtonItem = sender
 
     }
+    
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -118,6 +133,25 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
         mapView.removeAnnotations([annotation])
         print("remove pin")
     }
+    
+    //MARK: - Delegates
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        //        func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject])
+        //        {
+        var  chosenImage = UIImage()
+        chosenImage = info[UIImagePickerControllerOriginalImage] as! UIImage //2
+        imageView.contentMode = .scaleAspectFit //3
+        imageView.image = chosenImage //4
+        dismiss(animated:true, completion: nil) //5
+    }
+    
+    
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        dismiss(animated: true, completion: nil)
+    }
+
 
 }
 

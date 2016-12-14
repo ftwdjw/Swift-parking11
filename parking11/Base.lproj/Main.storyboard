@@ -26,7 +26,7 @@
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Tf8-um-1nF">
                                 <rect key="frame" x="0.0" y="-7" width="375" height="674"/>
                             </mapView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="MyParkingSectionPhoto.png" translatesAutoresizingMaskIntoConstraints="NO" id="WZU-A6-5AD">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="MyParkingSectionPhoto.png" translatesAutoresizingMaskIntoConstraints="NO" id="WZU-A6-5AD">
                                 <rect key="frame" x="0.0" y="64" width="76" height="102"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="76" id="yYV-oF-UlG"/>
@@ -66,6 +66,7 @@
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="imageView" destination="WZU-A6-5AD" id="hEf-oZ-jbS"/>
                         <outlet property="mapView" destination="Tf8-um-1nF" id="69H-3k-qps"/>
                     </connections>
                 </viewController>
